@@ -1,12 +1,12 @@
 import React from "react";
 import "../App.css";
-import logo from "../rotate-planete.gif";
+import planetRotateImage from "../images/rotate-planet.gif";
 
 const Planet = ({ planet }) => {
   return (
 <div className="card mb-3 App-width-card-planet">
       <div className="card-header App-align-center">
-        <img src={logo} className="App-logo" alt="logo" /> {planet.name}
+        <img src={planetRotateImage} className="App-logo" alt="logo" /> {planet.name}
       </div>
       <div className="card-body">
         <div className="row">

@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
-import Imperial from "./Star-Wars-Imperial.png";
+import SoldierImperialImage from "./images/Star-Wars-Imperial.png";
 import Planet from "./components/Planet";
 import { BallBeat } from 'react-pure-loaders';
 
@@ -19,7 +19,7 @@ export default class App extends Component {
     this.setState({ planet: {films: []} });
     this.setState({ loading: true });
     setTimeout(() => {
-    fetch("http://localhost:8080/random/planet")
+    fetch(`${process.env.REACT_APP_API_RANDOM}`)
       .then(res => res.json())
       .then(data => {
         this.setState({ planet: data });
@@ -31,7 +31,7 @@ export default class App extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      fetch("http://localhost:8080/random/planet")
+      fetch(`${process.env.REACT_APP_API_RANDOM}`)
       .then(res => res.json())
       .then(data => {
         this.setState({ planet: data });
@@ -45,7 +45,7 @@ export default class App extends Component {
     return (
       <div>
         <header className="App-header">
-        <img src={Imperial}/> 
+        <img src={SoldierImperialImage} alt="logo"/> 
           <div>
             <Planet planet={this.state.planet} />
           </div>
